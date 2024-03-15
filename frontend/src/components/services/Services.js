@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4" id="services">
       {/* Book Ticket */}
       <div className="mt-10">
         <div className="flex flex-col items-center">
@@ -27,7 +27,7 @@ const Services = () => {
             </p>
             <div className="flex gap-4">
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                For Train
+                <Link to="/">For Train</Link>
                 <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
               </div>
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
