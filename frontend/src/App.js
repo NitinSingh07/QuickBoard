@@ -29,13 +29,10 @@ function App() {
             </>
           }
         />
-      </Routes>
-      <Routes>
-<<<<<<< HEAD
         <Route exact path="/signup" element={<SignUp/>}/>
         <Route exact path="/login" element={<Login/>}/>
-=======
->>>>>>> 10a372bff8f4f856cc318b32c963c345f250d93a
+
+
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<Abouts />} />
         <Route exact path="/trainbooking" element={<TrainBookingPage />} />

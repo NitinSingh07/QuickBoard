@@ -30,14 +30,10 @@ const Services = () => {
               ensuring your comfort and satisfaction."
             </p>
             <div className="flex gap-4">
-<<<<<<< HEAD
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <Link to="/trainbooking">For Train</Link>
-                <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
-=======
               <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <Link to="/trainbooking">For Train</Link>
->>>>>>> 10a372bff8f4f856cc318b32c963c345f250d93a
+              <Link to="/trainbooking">For Train</Link>
+                <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
+              
               </div>
               <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <Link to="/flightbooking">For Flight</Link>
@@ -57,11 +53,8 @@ const Services = () => {
             <img src="/ifb.png" className="w-96 border-2" alt="" />
           </div>
           <div className="flex flex-col w-96 gap-4">
-<<<<<<< HEAD
-            <h1 className="font-bold text-blue-500 text-4xl">
-=======
+
             <h1 className="font-bold text-red-500 text-4xl">
->>>>>>> 10a372bff8f4f856cc318b32c963c345f250d93a
               Cancel Your Ticket
             </h1>
             <p className="text-lg">
@@ -78,12 +71,10 @@ const Services = () => {
               need."
             </p>
             <div className="flex gap-4">
-<<<<<<< HEAD
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
-=======
+
               <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
->>>>>>> 10a372bff8f4f856cc318b32c963c345f250d93a
+                <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
+
                 <Link to="/traincancel">For Train</Link>
               </div>
               <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
