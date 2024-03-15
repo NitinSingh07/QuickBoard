@@ -114,24 +114,22 @@ const TrainBookingPage = () => {
                   onClose={handleClose}
                 >
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Mumbai_CST")}
+                    onClick={() => handleMenuItemClick("Sonipat")}
                     disableRipple
                   >
-                    Mumbai_CST
+                    Sonipat
                   </MenuItem>
                   <MenuItem
-                    onClick={() =>
-                      handleMenuItemClick("Kolkata_Howrah_Junction")
-                    }
+                    onClick={() => handleMenuItemClick("Ambala_City")}
                     disableRipple
                   >
-                    Kolkata_Howrah_Junction
+                    Ambala_City
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Mumbai_Central")}
+                    onClick={() => handleMenuItemClick("Ambala_Cant.")}
                     disableRipple
                   >
-                    Mumbai_Central
+                    Ambala_Cant.
                   </MenuItem>
                   <MenuItem
                     onClick={() => handleMenuItemClick("Delhi_Junction")}
@@ -140,16 +138,46 @@ const TrainBookingPage = () => {
                     Delhi_Junction
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Chennai_Central")}
+                    onClick={() => handleMenuItemClick("Anandpur_Sahib")}
                     disableRipple
                   >
-                    Chennai_Central
+                    Anandpur_Sahib
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Bengaluru")}
+                    onClick={() => handleMenuItemClick("Una_Himachal")}
                     disableRipple
                   >
-                    Bengaluru
+                    Una_Himachal
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Hapur")}
+                    disableRipple
+                  >
+                    Hapur
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Gajraula")}
+                    disableRipple
+                  >
+                    Gajraula
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Amroha")}
+                    disableRipple
+                  >
+                    Amroha
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Moradabad")}
+                    disableRipple
+                  >
+                    Moradabad
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Bareilly")}
+                    disableRipple
+                  >
+                    Bareilly
                   </MenuItem>
                   {/* Add more menu items here */}
                 </StyledMenu>
@@ -179,22 +207,22 @@ const TrainBookingPage = () => {
                   onClose={handleClose}
                 >
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Chennai_Central")}
+                    onClick={() => handleMenuItemClick("Sonipat")}
                     disableRipple
                   >
-                    Chennai_Central
+                    Sonipat
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Vadodara")}
+                    onClick={() => handleMenuItemClick("Ambala_City")}
                     disableRipple
                   >
-                    Vadodara
+                    Ambala_City
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Bengaluru")}
+                    onClick={() => handleMenuItemClick("Ambala_Cant.")}
                     disableRipple
                   >
-                    Bengaluru
+                    Ambala_Cant.
                   </MenuItem>
                   <MenuItem
                     onClick={() => handleMenuItemClick("Delhi_Junction")}
@@ -203,16 +231,46 @@ const TrainBookingPage = () => {
                     Delhi_Junction
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Mumbai_Central")}
+                    onClick={() => handleMenuItemClick("Anandpur_Sahib")}
                     disableRipple
                   >
-                    Mumbai_Central
+                    Anandpur_Sahib
                   </MenuItem>
                   <MenuItem
-                    onClick={() => handleMenuItemClick("Mumbai_CST")}
+                    onClick={() => handleMenuItemClick("Una_Himachal")}
                     disableRipple
                   >
-                    Mumbai_CST
+                    Una_Himachal
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Hapur")}
+                    disableRipple
+                  >
+                    Hapur
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Gajraula")}
+                    disableRipple
+                  >
+                    Gajraula
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Amroha")}
+                    disableRipple
+                  >
+                    Amroha
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Moradabad")}
+                    disableRipple
+                  >
+                    Moradabad
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Bareilly")}
+                    disableRipple
+                  >
+                    Bareilly
                   </MenuItem>
                   {/* Add more menu items here */}
                 </StyledMenu>
