@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -6,12 +7,15 @@ const Services = () => {
       {/* Book Ticket */}
       <div className="mt-10">
         <div className="flex flex-col items-center">
-          <h3 className="font-bold text-4xl underline-offset-4">Services</h3>
+          <h2 className="text-4xl font-bold leading-10 tracking-tight text-gray-800 sm:text-4xl sm:leading-none md:text-6xl mr-5">
+            Our
+            <span className="font-bold text-blue-500 mx-4">Services</span>
+          </h2>{" "}
           <div className="h-1/2 w-40 bg-blue-500" />
         </div>
         <div className="flex justify-around mt-8">
           <div className="flex flex-col w-96 gap-4">
-            <h1 className="font-bold text-blue-500 text-4xl">
+            <h1 className="font-bold text-green-500 text-4xl">
               Book Your Ticket
             </h1>
             <p className="text-lg">
@@ -26,13 +30,11 @@ const Services = () => {
               ensuring your comfort and satisfaction."
             </p>
             <div className="flex gap-4">
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <Link to="/">For Train</Link>
-                <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
+              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+                <Link to="/trainbooking">For Train</Link>
               </div>
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                For Flight
-                <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
+              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+                <Link to="/flightbooking">For Flight</Link>
               </div>
             </div>
           </div>
@@ -49,8 +51,8 @@ const Services = () => {
             <img src="/ifb.png" className="w-96 border-2" alt="" />
           </div>
           <div className="flex flex-col w-96 gap-4">
-            <h1 className="font-bold text-blue-500 text-4xl">
-              Sell Your Ticket
+            <h1 className="font-bold text-red-500 text-4xl">
+              Cancel Your Ticket
             </h1>
             <p className="text-lg">
               Catering to user convenience, this service allows individuals to
@@ -66,13 +68,11 @@ const Services = () => {
               need."
             </p>
             <div className="flex gap-4">
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
-                For Train
+              <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+                <Link to="/traincancel">For Train</Link>
               </div>
-              <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
-                For Flight
+              <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+                <Link to="/flightcancel">For Flight</Link>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Services = () => {
       <div className="mt-10">
         <div className="flex justify-around">
           <div className="flex flex-col w-96 gap-4">
-            <h1 className="font-bold text-3xl">Upcoming</h1>
+            <h1 className="font-bold text-3xl">Upcoming Service </h1>
             <h1 className="font-bold text-blue-500 text-4xl">
               Vehicle Rental Exchange
             </h1>
