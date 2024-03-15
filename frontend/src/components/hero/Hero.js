@@ -40,7 +40,7 @@ const Hero = () => {
                 </div>
               </div>
               <p
-                className="max-w-md mx-auto mt-10 pt-4 text-base text-purple-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+                className="max-w-md mx-auto mt-10 pt-6 text-base text-purple-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
                 style={{ whiteSpace: "nowrap" }}
               >
                 "Every Journey Begins with Confidence and Convenience."

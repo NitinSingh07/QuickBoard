@@ -7,10 +7,10 @@ const Services = () => {
       {/* Book Ticket */}
       <div className="mt-10">
         <div className="flex flex-col items-center">
-          <h2 className="text-4xl font-bold leading-10 tracking-tight text-gray-800 sm:text-4xl sm:leading-none md:text-6xl mr-5">
+          <h2 className="text-3xl font-bold leading-10 tracking-tight text-gray-800 sm:text-4xl sm:leading-none md:text-6xl mr-5">
             Our
             <span className="font-bold text-blue-500 mx-4">Services</span>
-          </h2>{" "}
+          </h2>
           <div className="h-1/2 w-40 bg-blue-500" />
         </div>
         <div className="flex justify-around mt-8">
