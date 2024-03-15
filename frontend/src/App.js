@@ -6,6 +6,8 @@ import Contact from "./components/contact/Contact";
 import Features from "./components/features/Features";
 import Hero from "./components/hero/Hero";
 import Services from "./components/services/Services";
+import Login from "./components/signin/Login";
+import SignUp from "./components/signup/Signup";
 import Tagline from "./components/tagline/Tagline";
 import { Route, Routes } from "react-router-dom";
 
@@ -27,7 +29,8 @@ function App() {
         />
       </Routes>
       <Routes>
-        <Route exact path="" element={<Services />} />
+        <Route exact path="/signup" element={<SignUp/>}/>
+        <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<Abouts />} />
         <Route exact path="/trainbooking" element={<TrainBookingPage />} />

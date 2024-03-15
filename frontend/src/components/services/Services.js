@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -27,7 +28,7 @@ const Services = () => {
             </p>
             <div className="flex gap-4">
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <Link to="/">For Train</Link>
+                <Link to="/trainbooking">For Train</Link>
                 <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
               </div>
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
@@ -50,7 +51,7 @@ const Services = () => {
           </div>
           <div className="flex flex-col w-96 gap-4">
             <h1 className="font-bold text-blue-500 text-4xl">
-              Sell Your Ticket
+              Cancel Your Ticket
             </h1>
             <p className="text-lg">
               Catering to user convenience, this service allows individuals to
@@ -68,7 +69,7 @@ const Services = () => {
             <div className="flex gap-4">
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
-                For Train
+                <Link to="/traincancel">For Train</Link>
               </div>
               <div className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
