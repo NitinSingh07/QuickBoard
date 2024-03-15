@@ -31,9 +31,7 @@ const Services = () => {
             </p>
             <div className="flex gap-4">
               <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-              <Link to="/trainbooking">For Train</Link>
-                <img src="./img/arrow.jpg" alt="Arrow" className="w-8 ml-2" />
-              
+                <Link to="/trainbooking">For Train</Link>
               </div>
               <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <Link to="/flightbooking">For Flight</Link>
@@ -41,7 +39,7 @@ const Services = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <img src="/p2p.png" className="w-96 border-2" alt="" />
+            <img src="./img/book4.png" className="w-[30rem] border-3" alt="" />
           </div>
         </div>
       </div>
@@ -50,10 +48,9 @@ const Services = () => {
       <div className="mt-10">
         <div className="flex justify-around">
           <div className="flex items-center">
-            <img src="/ifb.png" className="w-96 border-2" alt="" />
+            <img src="./img/cancel.jpg" className="w-96 border-3" alt="" />
           </div>
           <div className="flex flex-col w-96 gap-4">
-
             <h1 className="font-bold text-red-500 text-4xl">
               Cancel Your Ticket
             </h1>
@@ -71,10 +68,7 @@ const Services = () => {
               need."
             </p>
             <div className="flex gap-4">
-
               <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
-                <img src="./img/arrowleft.jpg" alt="Arrow" className="w-8" />
-
                 <Link to="/traincancel">For Train</Link>
               </div>
               <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
@@ -107,11 +101,7 @@ const Services = () => {
             </p>
           </div>
           <div>
-            <img
-              src="/transferchain_web.5c25714d.png"
-              className="w-96"
-              alt=""
-            />
+            <img src="./img/rent.jpg" className="w-[40rem]" alt="" />
           </div>
         </div>
       </div>
