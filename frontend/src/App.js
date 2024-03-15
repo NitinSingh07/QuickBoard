@@ -1,6 +1,8 @@
 import "./App.css";
 import Abouts from "./components/about/About";
+import FlightBookingPage from "./components/booking/FlightBookingPage";
 import TrainBookingPage from "./components/booking/TrainBookingPage";
+import FlightCancelPage from "./components/cancel/FlightCancelPage";
 import TrainCancelPage from "./components/cancel/TrainCancelPage";
 import Contact from "./components/contact/Contact";
 import Features from "./components/features/Features";
@@ -29,12 +31,17 @@ function App() {
         />
       </Routes>
       <Routes>
+<<<<<<< HEAD
         <Route exact path="/signup" element={<SignUp/>}/>
         <Route exact path="/login" element={<Login/>}/>
+=======
+>>>>>>> 10a372bff8f4f856cc318b32c963c345f250d93a
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<Abouts />} />
         <Route exact path="/trainbooking" element={<TrainBookingPage />} />
+        <Route exact path="/flightbooking" element={<FlightBookingPage />} />
         <Route exact path="/traincancel" element={<TrainCancelPage />} />
+        <Route exact path="/flightcancel" element={<FlightCancelPage />} />
       </Routes>
     </>
   );

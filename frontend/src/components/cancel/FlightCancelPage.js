@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TrainCancelPage = () => {
+const FlightCancelPage = () => {
   const [bookingId, setBookingId] = useState("");
   const [reason, setReason] = useState("");
 
@@ -16,7 +16,7 @@ const TrainCancelPage = () => {
   return (
     <div className="container mx-auto p-10">
       <h1 className="text-3xl text-red-500 p-8 font-bold mt-4 mb-4 text-center">
-        Cancel Train Ticket
+        Cancel Flight Booking
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -49,15 +49,23 @@ const TrainCancelPage = () => {
             onChange={(e) => setReason(e.target.value)}
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-        >
-          Cancel Ticket
-        </button>
+        <div className="space-x-4">
+          <button
+            type="submit"
+            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Cancel Ticket
+          </button>
+          <button
+            type="submit"
+            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Sell Your Ticket
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
-export default TrainCancelPage;
+export default FlightCancelPage;
