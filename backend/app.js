@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 
-const Ticket = require("./models/Ticket");
+const Ticket = require("./models/trainTicketModel");
 
 
 

@@ -3,9 +3,9 @@ import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Divider from "@mui/material/Divider";
-
+// import Divider from "@mui/material/Divider";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -48,26 +48,38 @@ const StyledMenu = styled((props) => (
     },
   },
 }));
+
 const TrainBookingPage = () => {
-  // Define state variables for departing and arriving stations, and dates
   const [departingStation, setDepartingStation] = useState("");
   const [arrivingStation, setArrivingStation] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
-
   const [anchorEl, setAnchorEl] = useState(null);
+  const [menuType, setMenuType] = useState(""); // Added state to track menu type (departure or arrival)
+
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-    console.log(anchorEl);
+
+  const handleMenuItemClick = (station) => {
+    if (menuType === "departure") {
+      setDepartingStation(station);
+    } else if (menuType === "arrival") {
+      setArrivingStation(station);
+    }
+    setAnchorEl(null); // Close the menu after selection
   };
+
+  const handleClick = (event, type) => {
+    setAnchorEl(event.currentTarget);
+    setMenuType(type);
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
+    setMenuType("");
   };
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle the form submission logic, such as sending data to backend or showing confirmation message
+    // Handle form submission logic
   };
 
   return (
@@ -76,138 +88,156 @@ const TrainBookingPage = () => {
         Search Your Train
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex justify-center ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[5rem]">
             <div>
               <p className="mb-[1rem] text-[1.4rem] font-bold">
                 Departure Station
               </p>
               <div>
                 <Button
-                  id="demo-customized-button"
-                  aria-controls={open ? "demo-customized-menu" : undefined}
+                  id="departure-station-button"
+                  aria-controls={open ? "departure-station-menu" : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
                   variant="contained"
                   disableElevation
-                  onClick={handleClick}
+                  onClick={(e) => handleClick(e, "departure")}
                   endIcon={<KeyboardArrowDownIcon />}
                 >
-                  Select Station
+                  {departingStation || "Select Station"}
                 </Button>
                 <StyledMenu
-                  id="demo-customized-menu"
-                  MenuListProps={{
-                    "aria-labelledby": "demo-customized-button",
-                  }}
+                  id="departure-station-menu"
                   anchorEl={anchorEl}
-                  open={open}
+                  open={open && menuType === "departure"}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose} disableRipple>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Mumbai_CST")}
+                    disableRipple
+                  >
                     Mumbai_CST
                   </MenuItem>
-                  <MenuItem onClick={handleClose} disableRipple>
+                  <MenuItem
+                    onClick={() =>
+                      handleMenuItemClick("Kolkata_Howrah_Junction")
+                    }
+                    disableRipple
+                  >
                     Kolkata_Howrah_Junction
                   </MenuItem>
-                  <Divider sx={{ my: 0.5 }} />
-                  <MenuItem onClick={handleClose} disableRipple>
-                    Chennai_Central
-                  </MenuItem>
-                  <MenuItem onClick={handleClose} disableRipple>
-                    Vadodara
-                  </MenuItem>
-                  <MenuItem onClick={handleClose} disableRipple>
-                    Delhi_Junction
-                  </MenuItem>
-                  <MenuItem onClick={handleClose} disableRipple>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Mumbai_Central")}
+                    disableRipple
+                  >
                     Mumbai_Central
                   </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Delhi_Junction")}
+                    disableRipple
+                  >
+                    Delhi_Junction
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Chennai_Central")}
+                    disableRipple
+                  >
+                    Chennai_Central
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Bengaluru")}
+                    disableRipple
+                  >
+                    Bengaluru
+                  </MenuItem>
+                  {/* Add more menu items here */}
                 </StyledMenu>
               </div>
-
-              {/* <input
-              type="text"
-              id="departingStation"
-              className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-              value={departingStation}
-              onChange={(e) => setDepartingStation(e.target.value)}
-            /> */}
             </div>
-          </div>
-          <div>
-            <p className="mb-[1rem] text-[1.4rem] font-bold">Arrival Station</p>
             <div>
-              <Button
-                id="demo-customized-button"
-                aria-controls={open ? "demo-customized-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-                variant="contained"
-                disableElevation
-                onClick={handleClick}
-                endIcon={<KeyboardArrowDownIcon />}
-              >
-                Select Station
-              </Button>
-              <StyledMenu
-                id="demo-customized-menu"
-                MenuListProps={{
-                  "aria-labelledby": "demo-customized-button",
-                }}
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose} disableRipple>
-                  Mumbai_CST
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                  Kolkata_Howrah_Junction
-                </MenuItem>
-                <Divider sx={{ my: 0.5 }} />
-                <MenuItem onClick={handleClose} disableRipple>
-                  Chennai_Central
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                  Vadodara
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                  Delhi_Junction
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                  Mumbai_Central
-                </MenuItem>
-              </StyledMenu>
+              <p className="mb-[1rem] text-[1.4rem] font-bold">
+                Arrival Station
+              </p>
+              <div>
+                <Button
+                  id="arrival-station-button"
+                  aria-controls={open ? "arrival-station-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  variant="contained"
+                  disableElevation
+                  onClick={(e) => handleClick(e, "arrival")}
+                  endIcon={<KeyboardArrowDownIcon />}
+                >
+                  {arrivingStation || "Select Station"}
+                </Button>
+                <StyledMenu
+                  id="arrival-station-menu"
+                  anchorEl={anchorEl}
+                  open={open && menuType === "arrival"}
+                  onClose={handleClose}
+                >
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Chennai_Central")}
+                    disableRipple
+                  >
+                    Chennai_Central
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Vadodara")}
+                    disableRipple
+                  >
+                    Vadodara
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Bengaluru")}
+                    disableRipple
+                  >
+                    Bengaluru
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Delhi_Junction")}
+                    disableRipple
+                  >
+                    Delhi_Junction
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Mumbai_Central")}
+                    disableRipple
+                  >
+                    Mumbai_Central
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => handleMenuItemClick("Mumbai_CST")}
+                    disableRipple
+                  >
+                    Mumbai_CST
+                  </MenuItem>
+                  {/* Add more menu items here */}
+                </StyledMenu>
+              </div>
             </div>
-
-            {/* <input
-              type="text"
-              id="departingStation"
-              className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-              value={departingStation}
-              onChange={(e) => setDepartingStation(e.target.value)}
-            /> */}
           </div>
         </div>
-        <div>
+        <div className="flex flex-col items-center mt-[2rem]">
           <label
             htmlFor="date"
             className="block text-sm font-medium text-gray-700"
           >
-            Select Your Date
+            Select Date
           </label>
           <input
             type="date"
             id="date"
-            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            className="mt-1 border-solid border-2 border-black focus:ring-indigo-500 focus:border-indigo-500 block px-[0.5rem] py-[0.2rem] shadow-sm sm:text-sm w-[10rem] rounded-md"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
           />
         </div>
         <button
           type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+          className=" relative left-[42rem] top-[3rem] inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
         >
           Book Now
         </button>

@@ -1,14 +1,22 @@
-    const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-const TrainTicketSchema=new mongoose.Schema({
+
+const trainTicketSchema=mongoose.Schema({
     amount:{
         type:Number,
+        required:true
     },
     trainNo:{
         type:Number,
+        required:true
+    },
+    userEmail:{
+        type:String,
+        required:true
     },
     trainName:{
-        type:String
+        type:String,
+        required:true
     },
     departureStation:{
         type:String,
@@ -46,28 +54,7 @@ const TrainTicketSchema=new mongoose.Schema({
     cancelationOnTrack:{
         type:Boolean
     }
-    
-    
+});
 
-})
-
-const userSchema = mongoose.Schema(
-  {
-    fullName: { type: "String", required: true },
-    email: { type: "String", unique: true, required: true },
-    password: { type: "String", required: true },
-    phone:{
-        type:"Number",
-        required:true,
-        unique:true
-    },
-    
-    trainTickets:[TrainTicketSchema]
-
-   
-  }
-);
-
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+const TrainTicket=mongoose.model("TrainTicket",trainTicketSchema);
+module.exports=TrainTicket;
