@@ -30,10 +30,10 @@ const Services = () => {
               ensuring your comfort and satisfaction."
             </p>
             <div className="flex gap-4">
-              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold px-[1rem] rounded-md">
                 <Link to="/trainbooking">For Train</Link>
               </div>
-              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+              <div className="bg-green-500 hover:bg-green-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold px-[1rem]  rounded-md">
                 <Link to="/flightbooking">For Flight</Link>
               </div>
             </div>
@@ -68,10 +68,10 @@ const Services = () => {
               need."
             </p>
             <div className="flex gap-4">
-              <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+              <div className="bg-red-500 px-[1rem] rounded-md hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <Link to="/traincancel">For Train</Link>
               </div>
-              <div className="bg-red-500 hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
+              <div className="bg-red-500 px-[1rem] rounded-md hover:bg-red-600 flex items-center justify-center cursor-pointer py-4 text-lg text-white font-bold">
                 <Link to="/flightcancel">For Flight</Link>
               </div>
             </div>
