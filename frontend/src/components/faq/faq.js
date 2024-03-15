@@ -12,10 +12,10 @@ const Faq = () => {
         <h3 className="text-bold text-4xl underline-offset-4">
           Frequently Asked Questions
         </h3>
-        <div className="h-[0.2rem] w-[30rem] bg-[#2874fc]" />
+        <div className="h-[0.2rem] mt-2 w-[30rem] bg-[#2874fc]" />
       </div>
       <div>
-        <div className="w-[80%] mx-auto flex flex-col gap-[1rem]">
+        <div className="w-[80%] mx-auto mt-4 flex flex-col gap-[1rem]">
           <Accordion className="border-2 border-blue-300">
             <AccordionSummary
               expandIcon={<AddCircleIcon />}

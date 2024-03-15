@@ -9,7 +9,7 @@ const Hero = () => {
         backgroundImage: "url('./img/hero2.jpg')",
       }}
     >
-      <div className="container ml-[30%]">
+      <div className="container ml-[32%]">
         <div className="max-w-screen-xl  md:flex-row sm:px-6">
           <div className="flex items-center md:w-1/2 md:pb-20 md:pt-10 md:pr-10">
             <div className="text-align">

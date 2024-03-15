@@ -22,19 +22,24 @@ app.get('/', (req, res) => {
 });
 
 
+const Ticket = require("./models/Ticket");
+
 
 
 //Ticket OnCancelation
 app.post('/api/oncancelation',async(req,res)=>{
     try {
         const receivedData=req.body;
-        const {userEmail}=receivedData;
+        const {userEmail,pnr}=receivedData;
         if(!userEmail){
             return res.status(400).json({ message: 'Some error occured ! Please login again after logingout', status: 400 });
 
         }else{
             const user = await Users.findOne({ userEmail });
-            user.cancelationOnTrack=true;
+            user.cancelationOnTrack = true;
+            const ticket = await Ticket.findOne({ _id: pnr });
+            ticket.cancelationOnTrack = true;
+            ticket.save();
             await user.save();
             return res.json({
                 status: 200,
