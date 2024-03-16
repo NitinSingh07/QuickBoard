@@ -49,6 +49,12 @@ const trainTicketSchema=mongoose.Schema({
     },
     cancelationOnTrack:{
         type:Boolean
+    },
+    confirmed:{
+        type:Boolean
+    },
+    waiting:{
+        type:Boolean
     }
 });
 
