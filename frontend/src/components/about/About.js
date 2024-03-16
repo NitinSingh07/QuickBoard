@@ -7,7 +7,7 @@ function About({ iconSrc, title, description }) {
         <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
           <img src={iconSrc} alt="icon" />
         </div>
-        <p className="font-heading ml-16 text-lg leading-6 font-bold text-gray-700">
+        <p className="font-heading ml-16 text-lg leading-6 font-bold text-blue-500">
           {title}
         </p>
       </dt>
@@ -25,12 +25,12 @@ function Abouts() {
             <h2 className="font-heading mb-4   px-4 py-2 rounded-lg md:w-64 md:mx-auto text-xs font-semibold tracking-widest text-black uppercase title-font">
               Why choose us?
             </h2>
-            <p className="font-heading mt-2 text-3xl leading-8 font-semibold tracking-tight text-gray-900 sm:text-4xl">
+            <p className="font-heading mt-2 text-3xl leading-8 font-semibold tracking-tight text-blue-500 sm:text-4xl">
               About Us
             </p>
             <p className="mt-4 max-w-2xl text-lg text-gray-500 lg:mx-auto">
-              "We're dedicated to revolutionizing travel with
-              seamless solutions. Through innovation and a focus on customer
+              "We're dedicated to revolutionizing travel with seamless
+              solutions. Through innovation and a focus on customer
               satisfaction, we strive to optimize every aspect of the journey.
               Join us in shaping the future of travel convenience and
               satisfaction."
