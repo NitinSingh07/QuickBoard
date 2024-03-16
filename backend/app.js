@@ -27,15 +27,15 @@ const Ticket = require("./models/trainTicketModel");
 
 
 //Ticket OnCancelation
-app.post('/api/oncancelation',async(req,res)=>{
+app.post('/api/oncancelation', async (req, res) => {
     try {
-        const receivedData=req.body;
-        const {userEmail,pnr}=receivedData;
-        if(!userEmail){
+        const receivedData = req.body;
+        const { userEmail, pnr } = receivedData;
+        if (!userEmail) {
             return res.status(400).json({ message: 'Some error occured ! Please login again after logingout', status: 400 });
 
-        }else{
-            const user = await Users.findOne({ userEmail });
+        } else {
+            const user = await Users.findOne({ email:userEmail });
             user.cancelationOnTrack = true;
             const ticket = await Ticket.findOne({ _id: pnr });
             ticket.cancelationOnTrack = true;
@@ -57,20 +57,36 @@ app.post('/api/oncancelation',async(req,res)=>{
 //Ticket Booking 
 app.post('/api/bookticket', async (req, res) => {
     try {
-        console.log("Booking ticket request received at backend");
+        console.log("Booking ticket request received at backend", req.body);
         const ticketData = req.body;
-        const { userEmail, amount, trainNo, trainName, departureStation, departureStationNo, destinationStation, destinationStationNo, departuredate, departuretime, coach, seatNo, berth } = ticketData;
+        const { userEmail, amount, trainNo, trainName, departureStation, destinationStation, departuredate, coach } = ticketData;
 
-        if (!userEmail || !amount || !trainNo || !trainName || !departureStation || !departureStationNo || !destinationStation || !destinationStationNo || !departuredate || !departuretime || !coach || !seatNo || !berth) {
+        if (!userEmail || !amount || !trainNo || !trainName || !departureStation || !destinationStation || !departuredate || !coach) {
             return res.status(400).json({ message: 'Please fill all required details', status: 400 });
 
         } else {
-            const user = await Users.findOne({ userEmail });
+
+            const newTicket = new Ticket({
+                amount,
+                trainNo,
+                userEmail,
+                trainName,
+                departureStation,
+                destinationStation,
+                departuredate,
+                coach
+            });
+            const savedTicket = await newTicket.save();
+            const pnr = savedTicket._id.toString();
+            const user = await Users.findOne({ email:userEmail });
+            console.log("jfhj",user);
             const ticket = {
-                amount, trainNo, trainName, departureStation, departureStationNo, destinationStation, destinationStationNo, departuredate, departuretime, coach, seatNo, berth,canceled:false,cancelationOnTrack:false
+                amount, trainNo, trainName, departureStation, pnr, destinationStation, departuredate, coach, canceled: false, cancelationOnTrack: false,
 
             }
-            user.tickets.push(ticket);
+            console.log(ticket, "fdfgd54678", pnr);
+
+            user.trainTickets.push(ticket);
             await user.save();
             return res.json({
                 status: 200,

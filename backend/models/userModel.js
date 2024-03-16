@@ -1,71 +1,74 @@
-    const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-const TrainTicketSchema=new mongoose.Schema({
-    amount:{
-        type:Number,
+const TrainTicketSchema = new mongoose.Schema({
+    amount: {
+        type: Number,
     },
-    trainNo:{
-        type:Number,
+    trainNo: {
+        type: Number,
     },
-    trainName:{
-        type:String
+    trainName: {
+        type: String
     },
-    departureStation:{
-        type:String,
+    departureStation: {
+        type: String,
     },
-    departureStationNo:{
-        type:Number,
+    // departureStationNo:{
+    //     type:Number,
+    // },
+    destinationStation: {
+        type: String,
     },
-    destinationStation:{
-        type:String,
+    // destinationStationNo:{
+    //     type:Number
+    // },
+    departuredate: {
+        type: String,
     },
-    destinationStationNo:{
-        type:Number
+    midstation: {
+        type: String,
     },
-    departuredate:{
-        type:String,
+    // departuretime:{
+    //     type:Number
+    // },
+    coach: {
+        type: String
     },
-    midstation:{
-        type:String,
+    seatNo: {
+        type: Number,
     },
-    departuretime:{
-        type:Number
+    berth: {
+        type: String
     },
-    coach:{
-        type:String
+    canceled: {
+        type: Boolean
     },
-    seatNo:{
-        type:String,
+    cancelationOnTrack: {
+        type: Boolean
     },
-    berth:{
-        type:String
-    },
-    canceled:{
-        type:Boolean
-    },
-    cancelationOnTrack:{
-        type:Boolean
+    pnr: {
+        type: String
     }
-    
-    
+
+
 
 })
 
 const userSchema = mongoose.Schema(
-  {
-    fullName: { type: "String", required: true },
-    email: { type: "String", unique: true, required: true },
-    password: { type: "String", required: true },
-    phone:{
-        type:"Number",
-        required:true,
-        unique:true
-    },
-    
-    trainTickets:[TrainTicketSchema]
+    {
+        fullName: { type: "String", required: true },
+        email: { type: "String", unique: true, required: true },
+        password: { type: "String", required: true },
+        phone: {
+            type: "Number",
+            required: true,
+            unique: true
+        },
 
-   
-  }
+        trainTickets: [TrainTicketSchema]
+
+
+    }
 );
 
 const User = mongoose.model("User", userSchema);

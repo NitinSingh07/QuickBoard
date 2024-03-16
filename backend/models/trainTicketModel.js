@@ -21,29 +21,25 @@ const trainTicketSchema=mongoose.Schema({
     departureStation:{
         type:String,
     },
-    departureStationNo:{
-        type:Number,
-    },
+   
     destinationStation:{
         type:String,
     },
-    destinationStationNo:{
-        type:Number
-    },
+   
     departuredate:{
         type:String,
     },
     midstation:{
         type:String,
     },
-    departuretime:{
-        type:Number
-    },
+    // departuretime:{
+    //     type:Number
+    // },
     coach:{
         type:String
     },
     seatNo:{
-        type:String,
+        type:Number,
     },
     berth:{
         type:String
